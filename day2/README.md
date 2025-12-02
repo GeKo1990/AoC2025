@@ -1,4 +1,4 @@
-# Day 2: Gift Shop 🎁
+# Day 2: Gift Shop 
 
 ## Part 1
 
@@ -42,11 +42,7 @@ IDs do **not** include leading zeroes (`0101` is not valid input).
 
 Sum (example): **1227775554**
 
-### My Part 1 Answer
-
-**`19386344315`** ⭐
-
----
+--
 
 ## Part 2
 
