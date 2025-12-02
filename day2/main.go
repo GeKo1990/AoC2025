@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"io"
+	"io/ioutil"
 	"os"
 	"strconv"
 	"strings"
@@ -67,7 +67,8 @@ func main() {
 		return
 	}
 
-	data, err := io.ReadAll(os.Stdin)
+	// Read all input (old Go compatibility)
+	data, err := ioutil.ReadAll(os.Stdin)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, "read error:", err)
 		return
@@ -79,7 +80,7 @@ func main() {
 		return
 	}
 
-	// Split on commas and any whitespace so wrapped lines work.
+	// Split on commas + whitespace
 	ranges := strings.FieldsFunc(input, func(r rune) bool {
 		return r == ',' || unicode.IsSpace(r)
 	})
