@@ -67,7 +67,6 @@ func main() {
 		return
 	}
 
-	// Read all input (old Go compatibility)
 	data, err := ioutil.ReadAll(os.Stdin)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, "read error:", err)
