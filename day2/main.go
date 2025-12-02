@@ -6,7 +6,6 @@ import (
 	"os"
 	"strconv"
 	"strings"
-	"unicode"
 )
 
 // Part 1: exactly "some block repeated twice"
@@ -79,9 +78,9 @@ func main() {
 		return
 	}
 
-	// Split on commas + whitespace
+	// Split on commas
 	ranges := strings.FieldsFunc(input, func(r rune) bool {
-		return r == ',' || unicode.IsSpace(r)
+		return r == ','
 	})
 
 	var total int64
