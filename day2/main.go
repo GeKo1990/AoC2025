@@ -78,7 +78,6 @@ func main() {
 		return
 	}
 
-	// Split on commas
 	ranges := strings.FieldsFunc(input, func(r rune) bool {
 		return r == ','
 	})
