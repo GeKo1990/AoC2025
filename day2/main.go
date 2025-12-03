@@ -2,10 +2,10 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
 	"os"
 	"strconv"
 	"strings"
+	"unicode"
 )
 
 // Part 1: exactly "some block repeated twice"
@@ -48,12 +48,13 @@ func isRepeatedPatternAtLeastTwice(n int64) bool {
 }
 
 func main() {
-	if len(os.Args) < 2 {
-		fmt.Fprintln(os.Stderr, "usage: go run main.go <1|2> < input.txt>")
+	if len(os.Args) < 3 {
+		fmt.Fprintln(os.Stderr, "usage: go run main.go <1|2> input.txt>")
 		return
 	}
 
 	mode := os.Args[1]
+	filename := os.Args[2]
 
 	var isInvalid func(int64) bool
 	switch mode {
@@ -66,7 +67,7 @@ func main() {
 		return
 	}
 
-	data, err := ioutil.ReadAll(os.Stdin)
+	data, err := os.ReadFile(filename)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, "read error:", err)
 		return
@@ -78,8 +79,9 @@ func main() {
 		return
 	}
 
+	// Split on commas and any whitespace so wrapped lines work.
 	ranges := strings.FieldsFunc(input, func(r rune) bool {
-		return r == ','
+		return r == ',' || unicode.IsSpace(r)
 	})
 
 	var total int64
@@ -95,8 +97,8 @@ func main() {
 			return
 		}
 
-		start, err1 := strconv.ParseInt(parts[0], 10, 64)
-		end, err2 := strconv.ParseInt(parts[1], 10, 64)
+		start, err1 := strconv.ParseInt(strings.TrimSpace(parts[0]), 10, 64)
+		end, err2 := strconv.ParseInt(strings.TrimSpace(parts[1]), 10, 64)
 		if err1 != nil || err2 != nil {
 			fmt.Fprintln(os.Stderr, "parse error in range:", r)
 			return
