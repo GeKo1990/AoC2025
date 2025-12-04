@@ -83,8 +83,8 @@ Sum (example): **4174379265**
 My Go solution supports both modes:
 
 ```bash
-go run main.go 1 < input.txt   # Part 1
-go run main.go 2 < input.txt   # Part 2
+go run main.go 1 input.txt   # Part 1
+go run main.go 2 input.txt   # Part 2
 ```
 
 ---
