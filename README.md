@@ -1,8 +1,3 @@
-Great — here is a **clean, compliant, professional README** you can put at the root of your AoC repository.
-It follows Advent of Code copyright rules and looks good on GitHub.
-
----
-
 # 🎄 Advent of Code 2025 — My Solutions
 
 This repository contains **my personal solutions** for [Advent of Code 2025](https://adventofcode.com/2025), solved in Go.
