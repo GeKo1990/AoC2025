@@ -1,0 +1,12 @@
+# Advent of Code - do not commit inputs
+input.txt
+example.txt
+inputs/
+*.input
+*.sample
+
+# go build files
+bin/
+*.exe
+*.out
+*.test
