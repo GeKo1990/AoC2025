@@ -20,8 +20,6 @@ area   = width * height
 
 Your task is to find the **maximum possible area** over all red–red pairs.
 
-**Part 1 answer:** `4777816465`
-
 ---
 
 ## ⭐ Part Two
