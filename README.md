@@ -82,7 +82,3 @@ go run main.go < input.txt
 
 This repository contains **only my own code**, which you may use freely.
 All Advent of Code problem descriptions, samples, and inputs are **copyright by Eric Wastl** and may not be redistributed.
-
----
-
-## 🎁 Happy Coding!
